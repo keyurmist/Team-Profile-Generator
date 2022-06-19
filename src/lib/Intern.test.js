@@ -2,7 +2,7 @@ const Intern = require("./Intern");
 
 test("creates an Intern object", () => {
   const intern = new Intern("Keyur", 420, "keyurmist@gmail.com", "UoB");
-  expect(intern.github).toEqual(expect.any(String));
+  expect(intern.school).toEqual(expect.any(String));
 });
 
 test("checking getSchool method.", () => {
