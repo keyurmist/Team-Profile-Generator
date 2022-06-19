@@ -83,27 +83,32 @@ const createIntern = function (intern) {
 };
 
 createHTML = (data) => {
+  pageArray = [];
 
-    pageArray = []; 
+  for (let i = 0; i < data.length; i++) {
+    const employee = data[i];
+    const role = employee.getRole();
 
-    for (let i = 0; i < data.length; i++) {
-        const employee = data[i];
-        const role = employee.getRole(); 
-
-
-        if (role === 'Manager') {
-            const managerCard = createManager(employee);
-            pageArray.push(managerCard);
-        }
-
-        if (role === 'Engineer') {
-            const engineerCard = createEngineer(employee);
-            pageArray.push(engineerCard);
-        }
-
-        if (role === 'Intern') {
-            const internCard = createIntern(employee);
-            pageArray.push(internCard);
-        }
-        
+    if (role === "Manager") {
+      const managerCard = createManager(employee);
+      pageArray.push(managerCard);
     }
+
+    if (role === "Engineer") {
+      const engineerCard = createEngineer(employee);
+      pageArray.push(engineerCard);
+    }
+
+    if (role === "Intern") {
+      const internCard = createIntern(employee);
+      pageArray.push(internCard);
+    }
+  }
+
+  const employees = pageArray.join("");
+
+  const createTeam = createTeam(employees);
+  return createTeam;
+};
+
+module.exports = createHTML;
