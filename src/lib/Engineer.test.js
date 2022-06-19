@@ -10,7 +10,7 @@ test("creates an Engineer object", () => {
   expect(engineer.github).toEqual(expect.any(String));
 });
 
-test("checking getEmail method.", () => {
+test("checking getGithub method.", () => {
   const engineer = new Engineer(
     "Keyur",
     420,
