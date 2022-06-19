@@ -1,4 +1,4 @@
-const createTeam = function (employees) {
+const createTeamPage = function (employees) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -107,7 +107,7 @@ createHTML = (data) => {
 
   const employees = pageArray.join("");
 
-  const createTeam = createTeam(employees);
+  const createTeam = createTeamPage(employees);
   return createTeam;
 };
 
