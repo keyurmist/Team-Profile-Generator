@@ -167,3 +167,13 @@ const promptEmployee = () => {
       }
     });
 };
+
+const writeFile = (answers) => {
+  fs.writeFile("./dist/genindex.html", answers, (err) => {
+    if (err) {
+      console.log("Error");
+    } else {
+      console.log("Successfully wrote to genindex.html");
+    }
+  });
+};
