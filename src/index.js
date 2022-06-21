@@ -59,7 +59,7 @@ const promptManager = () => {
       const { name, id, email, officeNumber } = managerAnswer;
       const manager = new Manager(name, id, email, officeNumber);
 
-      teamArray.push(manager);
+      teamMembers.push(manager);
       console.log(manager);
     });
 };
@@ -168,8 +168,8 @@ const promptEmployee = () => {
     });
 };
 
-const writeFile = (answers) => {
-  fs.writeFile("./dist/genindex.html", answers, (err) => {
+const writeFile = (data) => {
+  fs.writeFile("../dist/genindex.html", data, (err) => {
     if (err) {
       console.log("Error");
     } else {
@@ -177,3 +177,15 @@ const writeFile = (answers) => {
     }
   });
 };
+
+promptManager()
+  .then(promptEmployee)
+  .then((teamMembers) => {
+    return createHTML(teamMembers);
+  })
+  .then((teamHTML) => {
+    return writeFile(teamHTML);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
