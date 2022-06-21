@@ -57,14 +57,26 @@ const promptManager = () => {
       },
     },
   ]);
+  .then((answerManager) => {
+    const manager = new Manager(name, id, email, officeNumber);
+    teamMembers.push(manager);
+    console.log(manager);
+  });
 };
 
-const promptEngineer = () => {
+const promptEmployee = () => {
   return inquirer.prompt([
+    {
+        type: 'input',
+        name: 'role',
+        message: 'Would you liek to add an employee?',
+        choices: ['Engineer, Intern, quit']
+    },
+
     {
       type: "input",
       name: "name",
-      message: "What is the engineer's name?",
+      message: "What is the employee's name?",
       validate: async (answer) => {
         if (!answer) {
           return "Please enter a valid name";
@@ -76,7 +88,7 @@ const promptEngineer = () => {
     {
       type: "input",
       name: "id",
-      message: "Please enter the engineer's ID",
+      message: "Please enter the employee's ID",
       validate: async (answer) => {
         if (!answer) {
           return "Please enter a valid ID";
@@ -88,7 +100,7 @@ const promptEngineer = () => {
     {
       type: "input",
       name: "email",
-      message: "Please enter the engineer's email",
+      message: "Please enter the employee's email",
       validate: async (answer) => {
         if (!answer) {
           return "Please enter a valid email";
@@ -100,7 +112,7 @@ const promptEngineer = () => {
     {
       type: "input",
       name: "github",
-      message: "Please enter the engineer's github",
+      message: "Please enter the employee's github",
       validate: async (answer) => {
         if (!answer) {
           return "Please enter a valid username";
@@ -108,57 +120,18 @@ const promptEngineer = () => {
         return true;
       },
     },
+
+    {
+        type: "input",
+        name: "school",
+        message: "Please enter the employee's school",
+        validate: async (answer) => {
+          if (!answer) {
+            return "Please enter a valid school";
+          }
+          return true;
+        },
+      },
   ]);
 };
 
-const promptIntern = () => {
-  return inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is the intern's name?",
-      validate: async (answer) => {
-        if (!answer) {
-          return "Please enter a valid name";
-        }
-        return true;
-      },
-    },
-
-    {
-      type: "input",
-      name: "id",
-      message: "Please enter the intern's ID",
-      validate: async (answer) => {
-        if (!answer) {
-          return "Please enter a valid ID";
-        }
-        return true;
-      },
-    },
-
-    {
-      type: "input",
-      name: "email",
-      message: "Please enter the intern's email",
-      validate: async (answer) => {
-        if (!answer) {
-          return "Please enter a valid email";
-        }
-        return true;
-      },
-    },
-
-    {
-      type: "input",
-      name: "school",
-      message: "Please enter the intern's school",
-      validate: async (answer) => {
-        if (!answer) {
-          return "Please enter a valid school";
-        }
-        return true;
-      },
-    },
-  ]);
-};
