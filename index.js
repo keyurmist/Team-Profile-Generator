@@ -1,9 +1,10 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const createHTML = require("./createhtml");
+import fs from "fs";
+import Manager from "./src/lib/Manager.js";
+import Engineer from "./src/lib/Engineer.js";
+import Intern from "./src/lib/Intern.js";
+import createHTML from "./src/createhtml.js";
+
+import inquirer from "inquirer";
 
 const teamMembers = [];
 

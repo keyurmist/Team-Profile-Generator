@@ -1,4 +1,4 @@
-const Engineer = require("./Engineer");
+const Engineer = require("./Engineer.js");
 
 test("creates an Engineer object", () => {
   const engineer = new Engineer(

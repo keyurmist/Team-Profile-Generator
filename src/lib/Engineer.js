@@ -1,4 +1,4 @@
-const Employee = require("./Employee");
+const Employee = require("./Employee.js");
 
 //Engineer constructor will extend the existing employee one
 

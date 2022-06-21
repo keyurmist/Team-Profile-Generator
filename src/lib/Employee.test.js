@@ -1,4 +1,4 @@
-const Employee = require("./Employee");
+const Employee = require("./Employee.js");
 
 describe("creates new Employee object", () => {
   it("name is Keyur, ID is a number, email is a string", () => {
