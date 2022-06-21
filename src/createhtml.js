@@ -110,3 +110,5 @@ createHTML = (data) => {
   const createTeam = createTeamPage(employees);
   return createTeam;
 };
+
+module.exports = createHTML;

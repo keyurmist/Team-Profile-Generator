@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest",
     "start": "node index.js"
@@ -20,7 +19,7 @@
   },
   "homepage": "https://github.com/keyurmist/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^9.0.0",
+    "inquirer": "^8.2.4",
     "jest": "^28.1.1"
   }
 }
