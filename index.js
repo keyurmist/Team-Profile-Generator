@@ -8,6 +8,16 @@ const inquirer = require("inquirer");
 
 const teamMembers = [];
 
+const promptStart = () => {
+  return inquirer.prompt([
+    {
+      type: "confirm",
+      name: "start",
+      message: "Would you like to create a team?",
+    },
+  ]);
+};
+
 const promptManager = () => {
   return inquirer
     .prompt([
@@ -57,7 +67,6 @@ const promptManager = () => {
       },
     ])
     .then((managerAnswer) => {
-      const { name, id, email, officeNumber } = managerAnswer;
       const manager = new Manager(name, id, email, officeNumber);
 
       teamMembers.push(manager);
@@ -185,7 +194,8 @@ const writeFile = (data) => {
   });
 };
 
-promptManager()
+promptStart()
+  .then(promptManager)
   .then(promptEmployee)
   .then((teamMembers) => {
     return createHTML(teamMembers);
