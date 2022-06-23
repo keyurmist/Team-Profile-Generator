@@ -69,10 +69,10 @@ const promptEmployee = () => {
   return inquirer
     .prompt([
       {
-        type: "checkbox",
+        type: "list",
         name: "role",
-        message: "Would you liek to add an employee?",
-        choices: ["Engineer, Intern, quit"],
+        message: "Would you like to add an employee?",
+        choices: ["Engineer", "Intern"],
       },
 
       {
