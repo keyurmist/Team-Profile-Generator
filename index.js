@@ -170,7 +170,7 @@ const promptEmployee = () => {
 };
 
 const writeFile = (data) => {
-  fs.writeFile("../dist/genindex.html", data, (err) => {
+  fs.writeFile("./dist/genindex.html", data, (err) => {
     if (err) {
       console.log("Error");
     } else {
