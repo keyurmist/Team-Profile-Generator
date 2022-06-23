@@ -73,6 +73,12 @@ const promptEmployee = () => {
         name: "role",
         message: "Would you like to add an employee?",
         choices: ["Engineer", "Intern"],
+        validate: async (answer) => {
+          if (!answer) {
+            return "Please choose an option";
+          }
+          return true;
+        },
       },
 
       {
