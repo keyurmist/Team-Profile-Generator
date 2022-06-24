@@ -39,7 +39,7 @@ node index.js
 Below shows a screenshot of the generated team profile:
 ![profile](./dist/assets/profile.png)
 
-You can watch the walkthrough video ![here](https://drive.google.com/file/d/1IV-sf6Y2Dq_d5TOpgeJSSWNalas4CzvB/view)
+You can watch the walkthrough video here: https://drive.google.com/file/d/1IV-sf6Y2Dq_d5TOpgeJSSWNalas4CzvB/view
 
 ## License
 
