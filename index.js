@@ -23,7 +23,7 @@ const promptManager = () => {
     .prompt([
       {
         type: "input",
-        name: "name",
+        name: "firstName",
         message: "What is the manager's name?",
         validate: async (answer) => {
           if (!answer) {
@@ -67,7 +67,8 @@ const promptManager = () => {
       },
     ])
     .then((managerAnswer) => {
-      const manager = new Manager(name, id, email, officeNumber);
+      const { firstName, id, email, officeNumber } = managerAnswer;
+      const manager = new Manager(firstName, id, email, officeNumber);
 
       teamMembers.push(manager);
       console.log(manager);
@@ -194,15 +195,20 @@ const writeFile = (data) => {
   });
 };
 
-promptStart()
-  .then(promptManager)
-  .then(promptEmployee)
-  .then((teamMembers) => {
-    return createHTML(teamMembers);
-  })
-  .then((teamHTML) => {
-    return writeFile(teamHTML);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+//function start the whole creating a team process
+const init = () => {
+  promptStart()
+    .then(promptManager)
+    .then(promptEmployee)
+    .then((teamMembers) => {
+      return createHTML(teamMembers);
+    })
+    .then((teamHTML) => {
+      return writeFile(teamHTML);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+init();
